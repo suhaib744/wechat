@@ -1,0 +1,100 @@
+.bubble-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 2px 0;
+  animation: fadeIn 0.3s ease;
+}
+.bubble-row--other  { flex-direction: row; }
+.bubble-row--mine   { flex-direction: row-reverse; }
+.bubble-row--grouped { margin-top: 1px; }
+
+.bubble-avatar { width: 34px; min-width: 34px; flex-shrink: 0; }
+.bubble-avatar__img {
+  width: 34px; height: 34px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: white;
+}
+.bubble-avatar__spacer { width: 34px; height: 10px; }
+
+.bubble-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-width: 70%;
+  min-width: 0;
+}
+.bubble-row--mine .bubble-content { align-items: flex-end; }
+
+.bubble-username {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-left: 4px;
+  padding-bottom: 1px;
+}
+
+.bubble {
+  padding: 10px 14px;
+  border-radius: 0;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--border-subtle);
+}
+.bubble--other {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+.bubble--mine {
+  background: var(--bg-hover);
+  color: white;
+}
+
+.bubble__text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.bubble__meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  justify-content: flex-end;
+}
+.bubble__time {
+  font-size: 0.65rem;
+  opacity: 0.65;
+}
+.bubble--other .bubble__time { color: var(--text-muted); }
+.bubble--mine  .bubble__time { color: rgba(255,255,255,0.7); }
+
+.bubble__status       { font-size: 0.65rem; font-weight: 600; }
+.bubble__status--sent      { color: rgba(255,255,255,0.55); }
+.bubble__status--delivered { color: rgba(255,255,255,0.75); }
+.bubble__status--read      { color: #a5f3fc; }
+
+@media (max-width: 700px) {
+  .bubble-content { max-width: 82%; }
+  .bubble { padding: 9px 12px; }
+  .bubble__text { font-size: 0.875rem; }
+
+  .bubble-avatar,
+  .bubble-avatar__img,
+  .bubble-avatar__spacer { width: 28px; min-width: 28px; }
+  .bubble-avatar__img { height: 28px; font-size: 0.6rem; }
+  .bubble-row { gap: 6px; }
+}
+
+@media (max-width: 380px) {
+  .bubble-content { max-width: 88%; }
+  .bubble { padding: 8px 10px; }
+  
+  .bubble-avatar { display: none; }
+  .bubble-content { max-width: 95%; }
+}

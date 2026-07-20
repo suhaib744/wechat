@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary:   #000000;
+  --bg-secondary: #111111;
+  --bg-tertiary:  #222222;
+  --bg-card:      #111111;
+  --bg-hover:     #333333;
+  --bg-input:     #222222;
+
+  --accent-primary:   #444444;
+  --accent-secondary: #666666;
+  --accent-glow:      rgba(255, 255, 255, 0.1);
+  --accent-gradient:  #444444;
+
+  --text-primary:   #ffffff;
+  --text-secondary: #aaaaaa;
+  --text-muted:     #888888;
+  --text-accent:    #cccccc;
+
+  --border-subtle: #333333;
+  --border-active: #ffffff;
+
+  --success: #00ff00;
+  --danger:  #ff0000;
+  --warning: #ffff00;
+  --info:    #0000ff;
+
+  --online:  #00ff00;
+  --away:    #ffff00;
+  --offline: #555555;
+
+  --radius-sm:   2px;
+  --radius-md:   2px;
+  --radius-lg:   2px;
+  --radius-xl:   2px;
+  --radius-full: 2px;
+
+  --shadow-sm:   none;
+  --shadow-md:   none;
+  --shadow-lg:   none;
+  --shadow-glow: none;
+
+  --transition-fast:   none;
+  --transition-normal: none;
+  --transition-slow:   none;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--bg-hover);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--border-subtle); }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-normal);
+}
+input, textarea {
+  font-family: inherit;
+  outline: none;
+  border: none;
+}
+input, button, textarea, select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#root {
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: stretch;
+}
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 700px) {
+  html, body { overscroll-behavior: none; }
+  body { height: 100dvh; }
+  #root { height: 100dvh; }
+}
